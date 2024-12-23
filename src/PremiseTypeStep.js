@@ -1,4 +1,3 @@
-// PremiseTypeStep.js
 import React from "react";
 import { Field, ErrorMessage } from "formik";
 
@@ -39,7 +38,7 @@ const PremiseTypeStep = ({ setFieldValue, values }) => {
 
       {values.premiseType && (
         <div className="premise-details">
-            <div className="form-group">
+          <div className="form-group">
             <label htmlFor="premiseDetail">Premise Details</label>
             <Field
               type="text"

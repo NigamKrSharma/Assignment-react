@@ -70,7 +70,7 @@ const MultiStepForm = () => {
         .integer("Must be an integer"),
     }),
     Yup.object({
-      date: Yup.date().required("Date is required").nullable(),
+      date: Yup.date().required("Date is required"),
     }),
   ];
 
@@ -106,28 +106,33 @@ const MultiStepForm = () => {
           validationSchema={validationSchema[currentStep]}
           onSubmit={onSubmit}
         >
-          {({ isValid, dirty, setFieldValue, values }) => (
+          {({ isValid, dirty, setFieldValue, values, errors, touched }) => (
             <Form>
-              {currentStep === 0 && <YourInfoStep />}
+              {currentStep === 0 && <YourInfoStep errors={errors} />}
               {currentStep === 1 && (
                 <PremiseTypeStep
                   setFieldValue={setFieldValue}
                   values={values}
+                  errors={errors}
                 />
               )}
-              {currentStep === 2 && <AddressStep />}
+              {currentStep === 2 && <AddressStep errors={errors} />}
               {currentStep === 3 && <ElectricityConsumptionStep />}
               {currentStep === 4 && <SelectDateStep />}
 
               <div className="form-navigation">
                 {currentStep > 0 && (
-                  <button className="form-btn-back" type="button" onClick={prevStep}>
+                  <button
+                    className="form-btn-back"
+                    type="button"
+                    onClick={prevStep}
+                  >
                     Back
                   </button>
                 )}
                 {currentStep < steps.length - 1 && (
                   <button
-                  className="form-btn-next"
+                    className="form-btn-next"
                     type="button"
                     onClick={nextStep}
                     disabled={!isValid || !dirty}
@@ -136,7 +141,9 @@ const MultiStepForm = () => {
                   </button>
                 )}
                 {currentStep === steps.length - 1 && (
-                  <button  className="form-btn-sub" type="submit">Submit</button>
+                  <button className="form-btn-sub" type="submit">
+                    Submit
+                  </button>
                 )}
               </div>
               {loading && <div className="loading">Submitting...</div>}

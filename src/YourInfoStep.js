@@ -9,38 +9,37 @@ const YourInfoStep = () => (
     </div>
     <div className="form-element">
       <div className="form-field">
-
-      <div className="form-group">
-        <label htmlFor="firstName">First Name</label>
-        <Field
-          id="firstName"
-          name="firstName"
-          className="form-input"
-          placeholder="e.g: Ravi"
+        <div className="form-group">
+          <label htmlFor="firstName">First Name</label>
+          <Field
+            id="firstName"
+            name="firstName"
+            className="form-input"
+            placeholder="e.g: Ravi"
           />
-        <ErrorMessage name="firstName" component="div" className="error" />
-      </div>
-      <div className="form-group">
-        <label htmlFor="lastName">Last Name</label>
-        <Field
-          id="lastName"
-          name="lastName"
-          className="form-input"
-          placeholder="e.g: Sharma"
+          <ErrorMessage name="firstName" component="div" className="error" />
+        </div>
+        <div className="form-group">
+          <label htmlFor="lastName">Last Name</label>
+          <Field
+            id="lastName"
+            name="lastName"
+            className="form-input"
+            placeholder="e.g: Sharma"
           />
-        <ErrorMessage name="lastName" component="div" className="error" />
+          <ErrorMessage name="lastName" component="div" className="error" />
+        </div>
       </div>
-          </div>
       <div className="form-group">
         <label htmlFor="email">Email</label>
         <Field
           type="email"
           id="email"
           name="email"
-           className="form-input"
+          className="form-input"
           placeholder="e.g:xyz@gmail.com"
         />
-        <ErrorMessage name="email" component="div" className="error-message" />
+        <ErrorMessage name="email" component="div" className="error" />
       </div>
 
       <div className="form-group">
@@ -49,10 +48,10 @@ const YourInfoStep = () => (
           type="text"
           id="number"
           name="number"
-           className="form-input"
+          className="form-input"
           placeholder="e.g:+91888888"
         />
-        <ErrorMessage name="number" component="div" className="error-message" />
+        <ErrorMessage name="number" component="div" className="error" />
       </div>
     </div>
   </div>
